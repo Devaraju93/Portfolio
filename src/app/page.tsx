@@ -38,6 +38,7 @@ import {
   Download,
 } from "lucide-react";
 import { sendEmail } from "@/lib/actions";
+import Image from "next/image";
 
 export default function Portfolio() {
   const [formData, setFormData] = useState({
@@ -110,55 +111,172 @@ export default function Portfolio() {
   };
 
   const skills = [
-    { name: "React", level: "Advanced", color: "bg-blue-500" },
-    { name: "Next.js", level: "Advanced", color: "bg-gray-800" },
-    { name: "TypeScript", level: "Intermediate", color: "bg-blue-600" },
-    { name: "Tailwind CSS", level: "Advanced", color: "bg-teal-500" },
-    { name: "Node.js", level: "Intermediate", color: "bg-green-600" },
-    { name: "MongoDB", level: "Intermediate", color: "bg-green-500" },
-    { name: "PostgreSQL", level: "Intermediate", color: "bg-blue-700" },
-    { name: "Git", level: "Advanced", color: "bg-orange-500" },
+    { name: "React.js", color: "bg-blue-500" },
+    { name: "Next.js", color: "bg-gray-800" },
+    { name: "TypeScript", color: "bg-blue-600" },
+    { name: "Tailwind CSS", color: "bg-teal-500" },
+    { name: "Node.js", color: "bg-green-600" },
+    { name: "MongoDB", color: "bg-green-500" },
+    { name: "PostgreSQL", color: "bg-blue-700" },
+    { name: "Git", color: "bg-orange-500" },
+    { name: "JavaScript", color: "bg-yellow-600" },
+    { name: "HTML", color: "bg-red-500" },
+    { name: "CSS", color: "bg-purple-500" },
+    { name: "Rest Api", color: "bg-pink-600" },
+    { name: "Material UI", color: "bg-indigo-500" },
+    { name: "Shadcn UI", color: "bg-green-400" },
+    { name: "Prisma(ORM)", color: "bg-blue-300" },
+    { name: " Github", color: "bg-gray-400" },
+    { name: "GCP", color: "bg-yellow-400" },
+    { name: "Neon Tech", color: "bg-pink-400" },
+    { name: "Uploadthing", color: "bg-teal-600" },
+    { name: "AWS(S3, RDS)", color: "bg-purple-500" },
+    // { name: "Responsive Design",  color: "bg-blue-500" },
+    // { name: "GraphQL",  color: "bg-purple-600" },
+    // { name: "REST APIs",  color: "bg-yellow-500" },
+    // { name: "Docker",  color: "bg-blue-400" },
+    // { name: "AWS",  color: "bg-orange-600" },
+    // { name: "CI/CD",  color: "bg-gray-500" },
+    // { name: "Agile Methodologies",  color: "bg-pink-500" },
   ];
 
   const experiences = [
     {
-      title: "Frontend Developer",
-      company: "TechCorp Solutions",
-      location: "San Francisco, CA",
-      duration: "Jan 2023 - Present",
+      title: "Software Developer",
+      company: "Jobox Hire Private Limited",
+      location: "Bangalore, India",
+      duration: "Sep 2023 – Present",
       description:
-        "Developed responsive web applications using React and Next.js. Collaborated with design teams to implement pixel-perfect UI components and improved application performance by 40%.",
-      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+        "Worked on two major projects, including a job portal and the 'Recruit and Earn' platform. Contributed to frontend and backend development, focusing on performance, scalability, and user experience.",
+      projects: [
+        {
+          name: "Job Portal",
+          duration: "Sep 2023 – Present",
+          highlights: [
+            "Led the development of a job portal from scratch, contributing to both frontend and backend functionalities.",
+            "Optimized API performance with a 30% faster response time and enhanced scalability via reusable components, reducing dev time by 20%.",
+            "Improved code structure and SEO, leading to a 15% increase in page speed, 10% boost in organic traffic, and 20% reduction in maintenance time.",
+            "Built role-based, mobile-responsive dashboards, increasing mobile user engagement by 25%.",
+            "Utilized Prisma ORM for optimized database querying.",
+          ],
+        },
+        {
+          name: " Recruit and Earn",
+          duration: "Dec 2024 – Feb 2025",
+          highlights: [
+            "Led end-to-end frontend development for employer and admin portals, from design to deployment.",
+            "Developed and optimized candidate referral workflows for recruiters to refer candidates and earn incentives.",
+            "Implemented secure form validation, authentication, and authorization for improved user experience.",
+            "Built reusable, responsive UI components using Next.js, React.js, and Tailwind CSS.",
+            "Used TypeScript for improved type safety, reducing runtime errors and improving maintainability.",
+            "Collaborated closely with backend teams to consume REST APIs efficiently.",
+          ],
+        },
+      ],
+      technologies: [
+        "Next.js",
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Prisma ORM",
+        "REST API",
+        "node.js",
+        "PostgreSQL",
+        "AWS S3",
+        "Postman",
+      ],
     },
   ];
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "CourseBuddy",
       description:
-        "Full-stack e-commerce solution with payment integration, user authentication, and admin dashboard.",
-      tech: ["Next.js", "TypeScript", "Stripe", "MongoDB"],
-      image: "/placeholder.svg?height=200&width=300",
-      github: "#",
-      live: "#",
+        "Developed Course Buddy, a responsive course review platform with user interactions, admin controls, and features like OAuth, search, filters, and pagination using Next.js, Tailwind CSS, Prisma, and PostgreSQL. ",
+      tech: [
+        "Next.js",
+        "React.js",
+        "Shadcn UI",
+        "Node.js",
+        "Typescript",
+        "Kinde Auth",
+        "PostgreSQL",
+        "Docker",
+      ],
+      image: "/coursebuddy.png",
+      github: "https://github.com/Devaraju93/CourseBuddy",
+      live: "https://course-buddy-nine.vercel.app/",
     },
     {
-      title: "Task Management App",
-      description:
-        "Collaborative task management application with real-time updates and team collaboration features.",
-      tech: ["React", "Node.js", "Socket.io", "PostgreSQL"],
-      image: "/placeholder.svg?height=200&width=300",
-      github: "#",
-      live: "#",
+      title: "Loan Calculator",
+      description: `Developed a responsive React.js application for calculating EMIs and displaying amortization schedules.
+Integrated real-time currency conversion using external exchange rate APIs for accurate financial data.
+Ensured a smooth user experience with clean UI and responsive design using Material UI.`,
+      tech: [
+        "React.js",
+        "Material UI",
+        "Context API",
+        "ExchangeRate API",
+        "Postman",
+      ],
+      image: "/Loancalculator.png",
+      github: "https://github.com/Devaraju93/Loan-Calculator",
+      live: "https://loan-calculator-sand.vercel.app/",
     },
     {
-      title: "Weather Dashboard",
+      title: "Bidverse",
+      description: ` Developed BidVerse, a real-time auction web app for creating and bidding on items.
+Built with Next.js, React, Tailwind CSS, Prisma, and PostgreSQL for full-stack integration.
+Implemented Uploadthing for smooth and efficient file uploads.`,
+      tech: [
+        "Next.js",
+        "Tailwind CSS",
+        "Typescript",
+        "Prisma(ORM)",
+        "PostgreSQL",
+      ],
+      image: "/bidverse.png",
+      github: "https://github.com/Devaraju93/buzzboard",
+      live: "https://bid-verse.vercel.app/",
+    },
+
+    {
+      title: "Recruit and Earn",
       description:
-        "Interactive weather dashboard with location-based forecasts and beautiful data visualizations.",
-      tech: ["React", "Chart.js", "Weather API", "Tailwind"],
-      image: "/placeholder.svg?height=200&width=300",
-      github: "#",
-      live: "#",
+        "Led  development of employer and admin portals using Next.js, React, Tailwind CSS, and TypeScript, implementing referral workflows, secure authentication, and responsive UI integrated with REST APIs.",
+      tech: [
+        "Next.Js",
+        "Typescript",
+        "PostgreSQL",
+        "Node.js",
+        "Prisma",
+        " Uploadthing",
+        " Neon Tech",
+        "REST API",
+      ],
+      image: "/recruitEarn.png",
+      // github: "https://github.com/alexjohnson/task-manager",
+      live: "https://www.joboxhire.co/",
+    },
+    {
+      title: "Job Portal",
+      description: `Led full-stack development of a scalable job portal,  reducing development time with reusable components.
+Improved code structure and implemented SEO best practices to enhance page speed, organic traffic, and maintainability.
+Developed role-based, mobile-responsive dashboards and optimized database queries using Prisma ORM.`,
+      tech: [
+        "Next.Js",
+        "Typescript",
+        "PostgreSQL",
+        "Docker",
+        "Prisma",
+        "AWS S3",
+        "AWS RDS",
+        "REST API",
+      ],
+      image: "/jobPortal.png",
+      // github: "https://github.com/alexjohnson/weather-dashboard",
+      live: "https://joboxhire.com/",
     },
   ];
 
@@ -183,7 +301,7 @@ export default function Portfolio() {
           <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Devaraju G
+                Devaraju G
               </div>
 
               {/* Desktop Navigation */}
@@ -260,8 +378,15 @@ export default function Portfolio() {
             <div className="text-center">
               <div className="relative inline-block">
                 <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 p-1">
-                  <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
-                    <User className="w-16 h-16 text-gray-600 dark:text-gray-400" />
+                  <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-800">
+                    <Image
+                      src="/photo.jpeg"
+                      alt="Alex Johnson - Full Stack Developer"
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
                   </div>
                 </div>
               </div>
@@ -273,8 +398,9 @@ export default function Portfolio() {
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
                 Passionate developer with 2 years of experience creating modern
-                web applications. I love turning ideas into beautiful,
-                functional digital experiences.
+                web applications.
+                <br /> I love turning ideas into beautiful, functional digital
+                experiences.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -294,7 +420,7 @@ export default function Portfolio() {
                   size="lg"
                   className="border-gray-300 text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-white dark:hover:bg-gray-700"
                   onClick={() =>
-                    window.open("https://github.com/alexjohnson", "_blank")
+                    window.open("https://github.com/Devaraju93", "_blank")
                   }
                 >
                   <Github className="w-4 h-4 mr-2" />
@@ -334,20 +460,29 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-                  Building Digital Solutions for 2+ Years
+                  Crafting Scalable Web Solutions for Over 2 Years
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                  I&apos;m a passionate full-stack developer with over 2 years
-                  of experience in creating modern web applications. My journey
-                  started with curiosity about how websites work, and it has
-                  evolved into a deep love for crafting efficient, user-friendly
-                  digital solutions.
+                  I am a dedicated full-stack developer with 2+ years of
+                  experience building modern, high-performance web applications.
+                  My development journey began with a curiosity about how the
+                  web works and has since evolved into a strong passion for
+                  building intuitive, scalable, and impactful digital solutions.
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                  I specialize in React, Next.js, and modern JavaScript
-                  frameworks, with a strong foundation in both frontend and
-                  backend development. I&apos;m always eager to learn new
-                  technologies and take on challenging projects.
+                  I specialize in React, Next.js, TypeScript, and modern
+                  JavaScript frameworks, with hands-on experience in building
+                  both frontend and backend systems. From designing clean user
+                  interfaces to optimizing backend logic, I take pride in
+                  delivering well-structured, maintainable, and user-friendly
+                  applications.
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                  I am a continuous learner who thrives in dynamic environments
+                  and enjoys tackling complex problems. Whether working
+                  independently or as part of a team, I am committed to writing
+                  clean code, meeting deadlines, and staying up-to-date with the
+                  latest in tech.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center gap-2">
@@ -356,18 +491,22 @@ export default function Portfolio() {
                       2+ Years Experience
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Code className="w-5 h-5 text-blue-600" />
-                    <span className="text-gray-700 dark:text-gray-300">
-                      15+ Projects Completed
-                    </span>
-                  </div>
+                  {/* <div className="flex items-center gap-2">
+      <Code className="w-5 h-5 text-blue-600" />
+      <span className="text-gray-700 dark:text-gray-300">
+        15+ Projects Completed
+      </span>
+    </div> */}
                 </div>
               </div>
-              <div className="relative">
-                <div className="w-full h-80 bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900 dark:to-blue-900 rounded-2xl flex items-center justify-center">
-                  <Code className="w-24 h-24 text-purple-600 dark:text-purple-400" />
-                </div>
+
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900 dark:to-blue-900">
+                <Image
+                  src="/softwareImage.png"
+                  alt="Profile Picture"
+                  fill
+                  className="object-cover rounded-2xl"
+                />
               </div>
             </div>
           </div>
@@ -406,15 +545,35 @@ export default function Portfolio() {
                           <Calendar className="w-4 h-4" />
                           <span className="text-sm">{exp.duration}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                        <div className="flex items-center mr-6  gap-2 text-gray-600 dark:text-gray-300">
                           <MapPin className="w-4 h-4" />
                           <span className="text-sm">{exp.location}</span>
                         </div>
                       </div>
                     </div>
+
                     <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                       {exp.description}
                     </p>
+
+                    {/* Projects Mapping */}
+                    {exp.projects?.map((project, pIndex) => (
+                      <div key={pIndex} className="mb-6">
+                        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">
+                          {project.name}
+                        </h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                          {project.duration}
+                        </p>
+                        <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+                          {project.highlights.map((point, pointIndex) => (
+                            <li key={pointIndex}>{point}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+
+                    {/* Technologies */}
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech, techIndex) => (
                         <Badge
@@ -460,12 +619,12 @@ export default function Portfolio() {
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
                       {skill.name}
                     </h3>
-                    <Badge
+                    {/* <Badge
                       variant="secondary"
                       className="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200"
                     >
                       {skill.level}
-                    </Badge>
+                    </Badge> */}
                   </CardContent>
                 </Card>
               ))}
@@ -481,7 +640,7 @@ export default function Portfolio() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Featured Projects
+                Projects
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto"></div>
             </div>
@@ -491,8 +650,13 @@ export default function Portfolio() {
                   key={index}
                   className="overflow-hidden hover:shadow-xl transition-shadow duration-300 border-0 bg-white dark:bg-gray-800"
                 >
-                  <div className="h-48 bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900 dark:to-blue-900 flex items-center justify-center">
-                    <Globe className="w-16 h-16 text-purple-600 dark:text-purple-400" />
+                  <div className="h-48 relative overflow-hidden">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
                   </div>
                   <CardHeader>
                     <CardTitle className="text-xl text-gray-900 dark:text-white">
@@ -515,13 +679,21 @@ export default function Portfolio() {
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <Button variant="outline" size="sm" className="flex-1">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </Button>
+                      {project.github && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1"
+                          onClick={() => window.open(project.github, "_blank")}
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </Button>
+                      )}
                       <Button
                         size="sm"
                         className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600"
+                        onClick={() => window.open(project.live, "_blank")}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
@@ -545,18 +717,19 @@ export default function Portfolio() {
                 Get In Touch
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-6"></div>
-              <p className="text-gray-600 dark:text-gray-300 text-lg">
-                Have a project in mind? Let&apos;s work together to bring your
-                ideas to life!
-              </p>
+              {/* <p className="text-gray-600 dark:text-gray-300 text-lg">
+                I would love to hear from you! Whether you have a question,
+                want to collaborate on a project, or just want to say hi, feel
+                free to reach out.
+              </p> */}
             </div>
 
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-                  {" "}
                   Let&apos;s Connect
                 </h3>
+
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
@@ -566,9 +739,12 @@ export default function Portfolio() {
                       <h4 className="font-semibold text-gray-900 dark:text-white">
                         Email
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-300">
-                        alex.johnson@email.com
-                      </p>
+                      <a
+                        href="mailto:devrajg9318@gmail.com"
+                        className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                      >
+                        devrajg9318@gmail.com
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -579,9 +755,14 @@ export default function Portfolio() {
                       <h4 className="font-semibold text-gray-900 dark:text-white">
                         LinkedIn
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-300">
-                        linkedin.com/in/alexjohnson
-                      </p>
+                      <a
+                        href="https://www.linkedin.com/in/devaraju-g-369745264/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                      >
+                        https://www.linkedin.com/in/devaraju-g-369745264/
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -592,9 +773,14 @@ export default function Portfolio() {
                       <h4 className="font-semibold text-gray-900 dark:text-white">
                         GitHub
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-300">
-                        github.com/alexjohnson
-                      </p>
+                      <a
+                        href="https://github.com/Devaraju93"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                      >
+                        https://github.com/Devaraju93
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -607,7 +793,8 @@ export default function Portfolio() {
                     Send Message
                   </CardTitle>
                   <CardDescription className="dark:text-gray-300">
-                  Fill out the form below and I&apos;ll get back to you as soon as possible.
+                    I would love to hear from you! Please fill out the form
+                    below and I will get back to you as soon as possible.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -650,7 +837,7 @@ export default function Portfolio() {
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="Tell me about your project..."
+                        placeholder="Your message here..."
                         className="min-h-[120px] dark:bg-gray-600 dark:border-gray-500 dark:text-white"
                         required
                       />
@@ -680,19 +867,23 @@ export default function Portfolio() {
             </p>
             <div className="flex justify-center space-x-6">
               <a
-                href="#"
+                href="https://github.com/alexjohnson"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://linkedin.com/in/alexjohnson"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="mailto:devrajg9318@gmail.com"
                 className="text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <Mail className="w-6 h-6" />
